@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "htmlparser2": "^3.8.3",
+    "json-stringify-safe": "^5.0.1",
     "lodash": "^3.9.3",
     "md5": "^2.0.0",
     "react": "^0.13.3"
