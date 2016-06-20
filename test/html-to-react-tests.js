@@ -76,6 +76,15 @@ describe('Html2React', function() {
             assert.equal(reactHtml, htmlInput);
         });
 
+        it('should return a valid HTML string with react-specific attributes', function() {
+            var htmlInput = '<iframe src="youtube.com/watch?v=1234" frameborder="0" allowfullscreen/>';
+
+            var reactComponent = parser.parse(htmlInput);
+            var reactHtml = React.renderToStaticMarkup(reactComponent);
+
+            assert.equal(reactHtml, '<iframe src="youtube.com/watch?v=1234" frameborder="0" allowfullscreen=""></iframe>');
+        });
+
         // FIXME: See lib/process-node-definitions.js -> processDefaultNode()
         it.skip('should return a valid HTML string with comments', function() {
             var htmlInput = '<div><!-- This is a comment --></div>';
